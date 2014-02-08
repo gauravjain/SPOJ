@@ -2,12 +2,13 @@
 int main()
 {
     int n,a,b,r,t,rev,rev1,x,y,nr,i,rev2;
-    rev=0;
-    rev1=0;
-    rev2=0;
+
     scanf("%d",&n);
     while(n>0)
     {
+                  rev=0;
+    rev1=0;
+    rev2=0;         
               n--;
               scanf("%d%d",&a,&b);
               x=a;

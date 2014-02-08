@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int t,mid,len,end,i;
+    char a[1000001];
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%s",a);
+        len=strlen(a);
+        if(len==1)
+            printf("YES\n");
+        else if(len==2)
+        {
+            if(a[0]==a[1])
+                printf("YES\n");
+            else
+                printf("NO\n");
+        }
+        else
+        {
+            if(len%2==0)
+            {
+                mid=len/2-1;
+                end=len-1;
+                for(i=0;i<=mid;i++)
+                {
+                    if(a[i]==a[end])
+                        end=end-1;
+                    else{
+                        printf("NO\n");
+                        break;
+                    }
+                }
+                if(i==mid+1)
+                    printf("YES\n");
+            }
+            else
+            {
+                mid=len/2;
+                end=len-1;
+                for(i=0;i<mid;i++)
+                {
+                    if(a[i]==a[end])
+                        end=end-1;
+                    else
+                    {
+                        printf("NO\n");
+                        break;
+                    }
+                }
+                if(i==mid)
+                    printf("YES\n");
+            }
+        }
+    }
+    return 0;
+}
